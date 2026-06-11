@@ -19,6 +19,7 @@
 Most LLM frameworks are Python-first. That is fine until you need:
 
 - a native C++ service runtime,
+- high performance scene
 - offline or embedded deployment,
 - static linking,
 - low-level control over memory and threading,
