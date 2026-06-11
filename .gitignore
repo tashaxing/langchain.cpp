@@ -1,0 +1,18 @@
+
+
+## Ignore CLion temporary files, build results, Logs
+*cmake-build*/
+
+build
+build_x64
+log
+target
+*.idea/
+*.vs/
+*.vscode/
+*.tag*
+*.imi
+*.target
+*.project
+*.settings
+*.classpath
