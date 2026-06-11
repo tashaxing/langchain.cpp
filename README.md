@@ -423,4 +423,4 @@ target_link_libraries(my_app PRIVATE langchain::langchain)
 
 ## License
 
-TBD.
+MIT
