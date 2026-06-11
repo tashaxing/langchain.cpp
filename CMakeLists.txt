@@ -338,15 +338,3 @@ if(LC_INSTALL)
             RUNTIME DESTINATION ${LC_STAGE_DIR}/bin
             INCLUDES DESTINATION ${LC_STAGE_DIR}/include)
 endif()
-
-# Temporary debug target
-# add_executable(test_config_debug test_config.cpp)
-# target_link_libraries(test_config_debug PRIVATE langchain)
-# add_executable(test_config2 test_config2.cpp)
-# target_link_libraries(test_config2 PRIVATE langchain)
-# add_executable(test_config3 test_config3.cpp)
-# target_link_libraries(test_config3 PRIVATE langchain)
-# add_executable(test_gtest_rag_debug test_gtest_rag_debug.cpp)
-# target_link_libraries(test_gtest_rag_debug PRIVATE langchain gtest gtest_main)
-# add_executable(test_config_odr test_config_odr.cpp)
-# target_link_libraries(test_config_odr PRIVATE langchain)
