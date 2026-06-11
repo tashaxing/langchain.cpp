@@ -262,37 +262,6 @@ The client reads its own local config from:
 examples/00_smart_app/config/chat_client_config.xml
 ```
 
-Example:
-
-```xml
-<chat_client>
-    <server>
-        <host>127.0.0.1</host>
-        <port>8080</port>
-        <connect_timeout_sec>10</connect_timeout_sec>
-        <read_timeout_sec>300</read_timeout_sec>
-    </server>
-    <models default="saas-kimi-k25">
-        <model>local-deepseek-v32</model>
-        <model>saas-qwen35-397b</model>
-        <model>saas-kimi-k25</model>
-        <model>saas-deepseek-v32</model>
-        <model>saas-glm-5</model>
-    </models>
-    <ui>
-        <console>false</console>
-    </ui>
-    <chat>
-        <session_id>desktop</session_id>
-        <stream>true</stream>
-        <temperature>0.7</temperature>
-        <top_p>0.95</top_p>
-        <top_k>50</top_k>
-        <max_tokens>1024</max_tokens>
-    </chat>
-</chat_client>
-```
-
 The UI includes:
 
 - WeChat-style chat bubbles
