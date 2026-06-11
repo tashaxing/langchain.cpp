@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  00_smart_app Configuration
+  Pre-configured for the provided LLM endpoint.
+-->
+<config>
+
+  <!-- ================================================================ -->
+  <!--  Application                                                     -->
+  <!-- ================================================================ -->
+  <app>
+    <enabled>true</enabled>
+    <name>00_smart_app</name>
+    <version>1.0.0</version>
+    <log_level>info</log_level>
+    <log_dir>log</log_dir>
+    <log_filename>smart_app.log</log_filename>
+    <log_max_size_mb>500</log_max_size_mb>
+    <log_max_files>10</log_max_files>
+    <log_console>true</log_console>
+  </app>
+
+  <!-- ================================================================ -->
+  <!--  LLM Provider                                                    -->
+  <!-- ================================================================ -->
+  <llm>
+    <enabled>true</enabled>
+    <base_url>http://168.63.65.40:8090/llm-service/v1</base_url>
+    <api_key>001614@d5f18j02b49cpbuqo4dg</api_key>
+    <default_model>saas-kimi-k25</default_model>
+    <!-- models: comma-separated list of model IDs to register -->
+    <models>local-deepseek-v32,saas-qwen35-397b,saas-kimi-k25,saas-deepseek-v32,saas-glm-5</models>
+    <temperature>0.2</temperature>
+    <max_tokens>2048</max_tokens>
+    <top_p>0.3</top_p>
+    <top_k>50</top_k>
+    <connect_timeout_sec>15</connect_timeout_sec>
+    <read_timeout_sec>120</read_timeout_sec>
+  </llm>
+
+  <!-- ================================================================ -->
+  <!--  API Server                                                      -->
+  <!-- ================================================================ -->
+  <api_server>
+    <enabled>true</enabled>
+    <host>0.0.0.0</host>
+    <port>8080</port>
+    <api_key></api_key>
+    <read_timeout_sec>120</read_timeout_sec>
+    <write_timeout_sec>120</write_timeout_sec>
+  </api_server>
+
+  <!-- ================================================================ -->
+  <!--  Embedding                                                       -->
+  <!-- ================================================================ -->
+  <embedding>
+    <enabled>true</enabled>
+    <provider>http</provider>
+    <base_url>http://168.63.65.40:8090/llm-service/v1</base_url>
+    <api_key>001614@d5f18j02b49cpbuqo4dg</api_key>
+    <model>text-embedding-3-small</model>
+    <dimensions>1536</dimensions>
+    <connect_timeout_sec>15</connect_timeout_sec>
+    <read_timeout_sec>60</read_timeout_sec>
+  </embedding>
+
+  <!-- ================================================================ -->
+  <!--  Vector Store                                                    -->
+  <!-- ================================================================ -->
+  <vectorstore>
+    <enabled>true</enabled>
+    <backend>sqlite</backend>
+    <db_path>data/vectorstore.db</db_path>
+  </vectorstore>
+
+  <!-- ================================================================ -->
+  <!--  Memory / Conversation                                           -->
+  <!-- ================================================================ -->
+  <memory>
+    <enabled>true</enabled>
+    <backend>sqlite</backend>
+    <db_path>data/memory.db</db_path>
+    <default_session_id>default</default_session_id>
+    <max_history_turns>20</max_history_turns>
+  </memory>
+
+  <!-- ================================================================ -->
+  <!--  RAG (Retrieval-Augmented Generation)                            -->
+  <!-- ================================================================ -->
+  <rag>
+    <enabled>true</enabled>
+    <knowledge_dir>data/knowledge</knowledge_dir>
+    <retriever_top_k>5</retriever_top_k>
+    <chunk_size>500</chunk_size>
+    <chunk_overlap>50</chunk_overlap>
+  </rag>
+
+  <!-- ================================================================ -->
+  <!--  Agent                                                           -->
+  <!-- ================================================================ -->
+  <agent>
+    <enabled>true</enabled>
+    <type>tool_calling</type>
+    <max_iterations>10</max_iterations>
+    <system_prompt>You are a helpful AI assistant with access to tools and long-term memory. You can perform calculations, fetch web pages, recall past conversations, and answer questions using retrieved knowledge. Always be concise and accurate.</system_prompt>
+    <temperature>0.2</temperature>
+    <max_tokens>2048</max_tokens>
+    <top_p>0.3</top_p>
+    <top_k>50</top_k>
+  </agent>
+
+  <!-- ================================================================ -->
+  <!--  Skills                                                          -->
+  <!-- ================================================================ -->
+  <skill>
+    <enabled>true</enabled>
+    <skills_dir>skills</skills_dir>
+  </skill>
+
+  <!-- ================================================================ -->
+  <!--  Tools                                                           -->
+  <!-- ================================================================ -->
+  <tool>
+    <enabled>true</enabled>
+    <calculator_enabled>true</calculator_enabled>
+    <http_get_enabled>true</http_get_enabled>
+    <datetime_enabled>true</datetime_enabled>
+    <echo_enabled>true</echo_enabled>
+  </tool>
+
+</config>
