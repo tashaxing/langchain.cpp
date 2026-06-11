@@ -9,12 +9,12 @@
     </server>
 
     <!-- Client-side model selection list. Do not read server-side app_config.xml. -->
-    <models default="saas-kimi-k25">
-        <model>local-deepseek-v32</model>
-        <model>saas-qwen35-397b</model>
-        <model>saas-kimi-k25</model>
-        <model>saas-deepseek-v32</model>
-        <model>saas-glm-5</model>
+    <models default="deepseek">
+        <model>deepseek</model>
+        <model>qwen</model>
+        <model>kimi</model>
+        <model>openai</model>
+        <model>claude</model>
     </models>
 
     <ui>
